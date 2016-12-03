@@ -29,8 +29,7 @@ def simple_title_extractor(page):
 
 def header_title_extractor(page):
     title = page.h1
-    title = title.text.strip()
-    return title if title is not None and title != "" else None
+    return title if title is not None else None
 
 
 def meta_title_extractor(page):
@@ -45,9 +44,11 @@ def class_header_title_extractor(page):
 
 def extract_feature(page, extractors, default_value):
     for extractor in extractors:
-        feature = extractor(page)
+        feature = extractor(page) # type: str
         if feature is not None:
-            return feature
+            clean_feature = feature.strip().replace("\n", " ")
+            if clean_feature != "":
+                return clean_feature
     return default_value
 
 
@@ -60,8 +61,7 @@ def extract_title(page, default_title):
         header_title_extractor,
         simple_title_extractor
     ]
-    clean_title = extract_feature(page, extractors, default_title).strip()
-    return clean_title.replace("\n", " ")
+    return extract_feature(page, extractors, default_title)
 
 
 for url in urls:
