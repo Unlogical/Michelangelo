@@ -4,8 +4,12 @@ from bs4 import BeautifulSoup
 
 urls = [
     "https://habrahabr.ru/company/edison/blog/316574/",
-    "http://antropogenez.ru/single-news/article/616/"
+    "https://geektimes.ru/post/282684/",
+    "https://russian.rt.com/science/article/337938-mars-posadka-sssr",
+    "http://antropogenez.ru/single-news/article/616/",
+    "https://newtonew.com/discussions/noetic-beauty"
 ]
+
 for url in urls:
     page = urllib.request.urlopen(url).read()
     soup = BeautifulSoup(page, 'html.parser')
