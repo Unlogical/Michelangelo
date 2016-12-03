@@ -11,6 +11,7 @@ urls = [
 ]
 
 for url in urls:
+    print(url)
     page = urllib.request.urlopen(url).read()
     soup = BeautifulSoup(page, 'html.parser')
 
@@ -22,16 +23,18 @@ for url in urls:
     header_title = soup.h1
     class_header_title = soup.find(class_ = "header")
 
-    if soup.title is not None:
-         title.append(soup.title.string)
+
+
     if og_title is not None:
         title.append(og_title['content'])
     if twitter_title is not None:
         title.append(twitter_title['content'])
-    if meta_title is not None:
-        title.append(meta_title['content'])
+    if soup.title is not None:
+        title.append(soup.title.string)
     if header_title is not None:
         title.append(header_title.text)
+    if meta_title is not None:
+        title.append(meta_title['content'])
     if class_header_title is not None:
         title.append(class_header_title.string)
 
