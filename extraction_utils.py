@@ -8,3 +8,10 @@ def extract_feature(page, extractors, default_value):
             if clean_feature != "":
                 return clean_feature
     return default_value
+
+
+def extract_content_feature(page, extractors, default_value):
+    for extractor in extractors:
+        feature = extractor(page) # type: str
+        return feature
+    return default_value
