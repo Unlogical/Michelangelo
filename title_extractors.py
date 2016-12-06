@@ -17,7 +17,7 @@ def simple_title_extractor(page):
 
 
 def header_title_extractor(page):
-    title = page.h1
+    title = page.h1.string
     return title if title is not None else None
 
 
