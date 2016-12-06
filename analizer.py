@@ -1,9 +1,9 @@
 import urllib
-import re
 from urllib import request
 from bs4 import BeautifulSoup
 from title_extractors import extract_title
 from author_extractors import  extract_author
+from date_extractor import  extract_date
 
 
 urls = [
@@ -23,7 +23,7 @@ for url in urls:
     page = BeautifulSoup(html, 'html.parser')
     title = extract_title(page, "unk!")
     author = extract_author(page, "unk!")
-
+    date = extract_date(page, "unk!")
 
 
 
@@ -31,6 +31,7 @@ for url in urls:
 
     print(title)
     print(author)
+    print(date)
     # except Exception as ex:
     #     print("Failed to get {}, skipping".format(url))
     #
