@@ -3,6 +3,7 @@ import re
 from urllib import request
 from bs4 import BeautifulSoup
 from title_extractors import extract_title
+from author_extractors import  extract_author
 
 
 urls = [
@@ -21,25 +22,15 @@ for url in urls:
     html = urllib.request.urlopen(url).read()
     page = BeautifulSoup(html, 'html.parser')
     title = extract_title(page, "unk!")
+    author = extract_author(page, "unk!")
 
 
-    author_div = page.find(class_ ="author")
-    if author_div is not None:
-        author_name = author_div.text.strip()
-    else:
-        author_name = author_div
-    print(author_name)
 
 
-    author_tags = page.find(class_ = "author-info__name")
-    if author_tags is not None:
-        author = author_tags.text.strip().replace("\n", " ")
-    else:
-        author = author_tags
+
+
+    print(title)
     print(author)
-
-
-    # print(title)
     # except Exception as ex:
     #     print("Failed to get {}, skipping".format(url))
     #
