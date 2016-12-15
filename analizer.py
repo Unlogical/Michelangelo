@@ -8,11 +8,11 @@ from content_extractors import extract_content
 
 
 urls = [
-    "https://habrahabr.ru/company/edison/blog/316574/",
-    "https://geektimes.ru/post/282684/",
-    "https://russian.rt.com/science/article/337938-mars-posadka-sssr",
-    "http://antropogenez.ru/single-news/article/616/",
-    "https://newtonew.com/discussions/noetic-beauty",
+    "https://habrahabr.ru/company/edison/blog/316574/"
+    # "https://geektimes.ru/post/282684/",
+    # "https://russian.rt.com/science/article/337938-mars-posadka-sssr",
+    # "http://antropogenez.ru/single-news/article/616/",
+    # "https://newtonew.com/discussions/noetic-beauty",
     # "https://pypi.python.org/pypi/htmldom/2.0"
 ]
 
@@ -32,9 +32,9 @@ for url in urls:
 
 
 
-    print(title)
-    print(author)
-    print(date)
+    # print(title)
+    # print(author)
+    # print(date)
     print(content)
     # except Exception as ex:
     #     print("Failed to get {}, skipping".format(url))

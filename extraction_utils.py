@@ -13,5 +13,6 @@ def extract_feature(page, extractors, default_value):
 def extract_content_feature(page, extractors, default_value):
     for extractor in extractors:
         feature = extractor(page) # type: str
-        return feature
+        if feature is not None:
+          return feature
     return default_value
