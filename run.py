@@ -38,7 +38,8 @@ def extract_data(html):
 
 htmls = urls.map(get_html)
 extracted_data = htmls.map(extract_data)
-extracted_data.pprint()
+# extracted_data.pprint()
+extracted_data.saveAsTextFiles("extracted_data")
 
 ssc.start()
 ssc.awaitTermination()
