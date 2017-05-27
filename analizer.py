@@ -3,7 +3,7 @@ from urllib import request
 from bs4 import BeautifulSoup
 from title_extractors import extract_title
 from author_extractors import  extract_author
-from date_extractor import  extract_date
+from date_extractors import  extract_date
 from content_extractors import extract_content
 
 
