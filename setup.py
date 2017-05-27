@@ -6,5 +6,5 @@ setup(name='Michelangelo',
       author='Unlogical',
       author_email='sakujo8744@mail.ru',
       packages=['beautifulsoup4'],
-      install_requires=['beautifulsoup4'],
+      install_requires=['beautifulsoup4', 'langdetect'],
       tests_require=['pytest'])
