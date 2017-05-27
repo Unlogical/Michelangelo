@@ -5,4 +5,6 @@ setup(name='Michelangelo',
       description='Webpages analizer',
       author='Unlogical',
       author_email='sakujo8744@mail.ru',
-      packages=['beautifulsoup4'])
+      packages=['beautifulsoup4'],
+      install_requires=['beautifulsoup4'],
+      tests_require=['pytest'])
