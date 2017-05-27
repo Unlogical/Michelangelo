@@ -9,12 +9,14 @@ def habra_date_extractor(page):
         return clear_date
     return None
 
+
 def date_extractor(page):
     date = page.find(class_ = re.compile("date"))
     if date is not None:
         clear_date = date.text.strip()
         return clear_date
     return None
+
 
 def extract_date(page, default_title):
     extractors = [

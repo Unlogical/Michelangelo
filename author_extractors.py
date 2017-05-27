@@ -1,5 +1,6 @@
 from extraction_utils import extract_feature
 
+
 def author_name_extractor(page):
     author_div = page.find(class_ ="author")
     if author_div is not None:
@@ -8,6 +9,7 @@ def author_name_extractor(page):
         author_name = author_div
     return author_name
 
+
 def habra_author_extractor(page):
     author_tags = page.find(class_ = "author-info__name")
     if author_tags is not None:
@@ -15,6 +17,7 @@ def habra_author_extractor(page):
     else:
         author = author_tags
     return author
+
 
 def extract_author(page, default_title):
     extractors = [

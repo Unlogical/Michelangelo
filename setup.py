@@ -1,5 +1,6 @@
 from distutils.core import setup
 
+
 setup(name='Michelangelo',
       version='0.1',
       description='Webpages analizer',

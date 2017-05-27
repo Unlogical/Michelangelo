@@ -1,8 +1,10 @@
 from extraction_utils import extract_content_feature
 import re
 
+
 def habra_content_extractor(page):
     return page.find(class_ = "content")
+
 
 def antrop_content_extractor(page):
     res = page.find(id = "content")
