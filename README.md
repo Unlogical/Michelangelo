@@ -10,5 +10,6 @@ spark-submit \
   --name "StreamPageAnalyzer" \
   --py-files "title_extractors.py,extraction_utils.py,content_extractors.py,author_extractors.py,date_extractor.py" \
    run.py \
-   urls.txt
+   urls.txt \
+   out.txt
 ```
