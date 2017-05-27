@@ -1,20 +1,13 @@
 import math
 
 
-def n(term, document):
-    return document.count(term)
-
-
 def tf(term, document: list):
-    return n(term, document) / len(document)
+    return document.count(term) / len(document)
 
 
 def idf(term, documents):
-    i = 0
-    for document in documents:
-        if n(term, document) > 0:
-            i += 1
-    return math.log2(len(documents) / i)
+    document_frequency = sum(1 for document in documents if term in document)
+    return math.log2(len(documents) / document_frequency)
 
 
 def tf_idf(term, document, documents):
