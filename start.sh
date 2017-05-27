@@ -1,5 +1,6 @@
 #! /bin/bash
 
+rm out.txt
 spark-submit \
   --master "local[2]" \
   --name "StreamPageAnalyzer" \
